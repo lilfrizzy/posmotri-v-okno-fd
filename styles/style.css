@@ -71,8 +71,7 @@ ol {
     "results details";
   padding: 0px;
   width: 1140px;
-  max-height: 534px;
-  gap: 30px;
+  gap: 25px;
 }
 
 .results {
@@ -81,7 +80,7 @@ ol {
 
 .content__details {
   grid-area: details;
-  width: 100%;
+  width: 399px;
   overflow: hidden;
 }
 
@@ -145,7 +144,6 @@ ol {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  margin-left: 5px;
 }
 
 .content__video-card {
@@ -190,7 +188,6 @@ ol {
   font-size: 18px;
   line-height: 16px;
   color: #FFFFFF;
-  line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   flex-grow: 1;
@@ -198,6 +195,7 @@ ol {
 
 .search-form {
   display: flex;
+  margin-right: 5px;
 }
 
 .search-form__fieldset {
@@ -209,37 +207,45 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 18px;
 }
 
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
+  border: 1px solid #FFFFFF;
+  display: flex;
   justify-self: center;
   align-self: center;
-  margin-right: 2.5px;
-  box-sizing: border-box;
-  border: 1px solid #FFFFFF;
+  margin-right: 1.5px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox {
-  border: 2px solid #000;
-  outline: 1px solid #FFFFFF;
-  outline-offset: -1px;
-  background-color: #FFFFFF;
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: none;
+  width: 17px;
+  height: 17px;
+  background-color: #fff;
+  border: 1px solid #000;
   background-position: center;
+  background-repeat: no-repeat;
+  position: center;
   background-repeat: no-repeat;
 }
 
-.search-form__label-text:hover {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   cursor: pointer;
 }
 
 .search-form__label {
   display: flex;
-  flex-direction: row;
-  width: fit-content;
+  align-items: center;
+  cursor: pointer;
 }
 
 .search-form__textfield {
@@ -326,16 +332,21 @@ ol {
   background-color: #545050;
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline;
   cursor: pointer
 }
 
-.content__list-item:focus {
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.content__card-link:focus {
   outline: none;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #FFFFFF;
   outline-offset: 1px;
 }
