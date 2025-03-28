@@ -229,7 +229,6 @@ ol {
   border: 1px solid #000;
   background-position: center;
   background-repeat: no-repeat;
-  position: center;
   background-repeat: no-repeat;
 }
 
@@ -338,6 +337,7 @@ ol {
 }
 
 .content__card-link:active {
+  display: block;
   background-color: #545050;
   text-decoration: none;
 }
